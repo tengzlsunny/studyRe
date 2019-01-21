@@ -1,7 +1,7 @@
 # 学习react
 ### 推荐地址：[点击前往可学习的github地址](https://github.com/carlleton/reactjs101)
 ### 路由api: [http://react-guide.github.io/react-router-cn/docs/API.html](http://react-guide.github.io/react-router-cn/docs/API.html)
-https://segmentfault.com/a/1190000010318444
+
 
 ### 简单的react构建
 1. 安装node和npm
@@ -172,6 +172,10 @@ https://segmentfault.com/a/1190000010318444
             const history = createMemoryHistory(location)
         * path 是对应 URL 的规则,例如：/repos/torvalds 会对应到 /repos/:name 的位置，并将参数传入 Repos 组件中。由 this.props.params.name 取得参数。顺带一提，若为查询参数 /user?q=torvalds 则由 this.props.location.query.q 取得参数。
         * IndexRoute 由于 / 情况下 App 组件对应的 this.props.children 会是 undefinded，所以使用 IndexRoute 来解决对应问题。这样当 URL 为 / 时将会对应到 Home 组件。不过要注意的是 IndexRoute 没有 path 属性。
+
+        > 路由的配置方式
+        * 标签的方式
+            
 
 
 

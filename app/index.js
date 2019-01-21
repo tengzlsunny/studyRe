@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'lib-flexible'
-
+import Index from './src/pages'
 
 class App extends React.Component {
   constructor(props) {
@@ -11,9 +11,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1 className="hello">Hello, World!</h1>
-      </div>
+        <Index />
     );
   }
 }
