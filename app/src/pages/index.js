@@ -1,25 +1,24 @@
+
+
 import React from 'react';
-import { browserHistory, Router, Route, IndexRoute } from 'react-router'
+import ReactDOM from 'react-dom';
+ 
+import { routes } from '../route';
+import { HashRouter } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
 
-// import Active from './active/active'
-// import Home from './home/home'
-// import Product from './product/product'
-// import Mine from './mine/mine'
-
-class Index extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-  render() {
-    return (
-      <div>
-        <div>
-          111111
-          </div>
-      </div>
-    );
-  }
+export default class Index extends React.Component{
+    render() {
+        return (
+            <div>
+                <HashRouter>
+                    <div>
+                        {renderRoutes(routes)}
+                    </div>
+                </HashRouter>
+            </div>
+            
+        )
+    }
 }
-export default Index;
+

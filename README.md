@@ -6,8 +6,10 @@
 ### 简单的react构建
 1. 安装node和npm
 2. 初始化package.json
+
     > npm init
 3. 安装webpcak
+
     > npm install --save-dev babel-core babel-eslint babel-loader@7 babel-preset-es2015 babel-preset-react html-webpack-plugin webpack webpack-dev-server webpack-cli
 4. 在根目录设定 webpack.config.js
     > 设定 webpack 的相关配置
@@ -64,6 +66,7 @@
         }
     ```
 6. 安装 react 和 react-dom
+
     > npm install --save react react-dom
 
 7. 撰写 pages（记得把 index.html 以及 index.js 放到 app 资料夹底下喔！)
@@ -87,8 +90,9 @@
     > lib-flexible来解决移动端适配(设置根元素的font-size值)
     * npm install lib-flexible --save
     * 在项目的入口js文件中引入lib-flexible
+
         > import 'lib-flexible'
-    
+
     * px2rem-loader自动将css中的px转成rem
         > npm install --save-dev px2rem-loader style-loader css-loader node-sass sass-loader
         > 配置px2rem-loader
@@ -108,7 +112,9 @@
             }
             ```
 2. 了解react语法
-    > React Component 撰写的主要两种方式
+
+    React Component 撰写的主要两种方式
+
     1. ```js
         //  注意组件开头第一个字母都要大写
         class MyComponent extends React.Component {
@@ -151,16 +157,16 @@
                 name: '', 
             }
         ```
-    > 在 JavaScript 里写 CSS：Inline Style
+    3. 在 JavaScript 里写 CSS：Inline Style
         ```js
            const divStyle = {
                 color: 'red',
                 backgroundImage: 'url(' + imgUrl + ')',
             };
-
+        
             <div style={divStyle}>Hello World!</div>
         ```
-    3. react路由
+    4. react路由
         > 安装react路由项：npm install --save-dev react-router
         * Router 是放置 Route 的容器，其本身不定义 routing ，真正 routing 规则由 Route 定义。
         * Route 负责 URL 和对应的组件关系，可以有多个 Route 规则也可以有嵌套（nested）Routing。像下面的例子就是每个页面都会先载入 App 组件再载入对应 URL 的组件。
@@ -174,8 +180,104 @@
         * IndexRoute 由于 / 情况下 App 组件对应的 this.props.children 会是 undefinded，所以使用 IndexRoute 来解决对应问题。这样当 URL 为 / 时将会对应到 Home 组件。不过要注意的是 IndexRoute 没有 path 属性。
 
         > 路由的配置方式
-        * 标签的方式
+        * 对象式
+            创建一个route文件，index.js中配置路由
+            例如：
+
+                ```js
+                    import React from 'react';
+                    import Home from '../pages/home/home.js'
+                    import Product from '../pages/product/product.js'
+                    import Active from '../pages/active/active.js'
+                    import Mine from '../pages/mine/mine.js'
+                    const routes = [
+                        {
+                            path: '/',
+                            component: Home,
+                            exact: true
+                        },
+                        {
+                            path: '/product',
+                            component: Product
+                        },
+                        {
+                            path: '/active',
+                            component: Active
+                        },
+                        {
+                            path: '/mine',
+                            component: Mine
+                        }
+                        
+                    ]
+                    export {routes}
+                ```
+            引入路由：
+
+                ```js
+                    import React from 'react';
+                    import ReactDOM from 'react-dom';
+                    
+                    import { routes } from '../route';
+                    import { HashRouter } from 'react-router-dom';
+                    import { renderRoutes } from 'react-router-config';
             
+                    export default class Index extends React.Component{
+                        render() {
+                            return (
+                                <div>
+                                    <HashRouter>
+                                        <div>
+                                            {renderRoutes(routes)}
+                                        </div>
+                                    </HashRouter>
+                                </div>
+                                
+                            )
+                        }
+                    }
+                    ReactDOM.render(
+                        (<Index />),
+                        document.getElementById('app')
+                    );
+                ```
+
+        5. 写公共底部components/footer.js
+
+           传值到footer.js
+
+           
+
+### 引入一些插件
+1. 引入阿里字体库
+    > 下载阿里字体库至本地
+    > 引入的文件部分需要解析：npm install --save-dev url-loader
+    > 配置项
+        ```js
+            {
+                test: /\.(woff|svg|eot|ttf)|\.(gif|jpg|png)$/,
+                use: ["url-loader?limit=8000"] // 在url-loader四版本及以上必须是数组的形式
+            },
+        ```
+
+### 随便
+> js写标签快捷
+```js
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true
+```
+
+
+### 遇到的问题
+
+
+​        
+​            
+
+
+​            
 
 
 
@@ -185,7 +287,7 @@
 
 
 
-    
+​    
 
 
 

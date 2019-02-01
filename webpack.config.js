@@ -39,12 +39,22 @@ module.exports = {
                     }
                 }]
             },
+            {
+                test: /\.(woff|svg|eot|ttf)|\.(gif|jpg|png)$/,
+                use: ["url-loader?limit=8000"]
+            },
+            // {
+            //     // test: /\.(gif|jpg|png)$/ || /\.(woff|svg|eot|ttf)/,
+            //     test: /\.(gif|jpg|png)$/,
+            //     // use: "url-loader?limit=8000"
+            //     use: ["file-loader"]
+            // }
         ],
     },
     // devServer 则是 webpack-dev-server 设定
     devServer: {
         inline: true,
-        port: 8008
+        port: 8088
     },
     // plugins 放置所使用的外挂
     plugins: [HTMLWebpackPluginConfig],

@@ -4,7 +4,7 @@
   "description": "study react",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base",
+    "dev": "webpack-dev-server --mode development --devtool eval --progress --colors --content-base",
     "build": "webpack --progress --hide-modules --mode production"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "react-router-dom": "^4.3.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "webpack": "^4.28.4",
     "webpack-dev-server": "^3.1.14"
   },
@@ -38,6 +39,7 @@
     "lib-flexible": "^0.3.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-router-config": "^4.4.0-beta.6",
     "webpack-cli": "^3.2.1"
   }
 }

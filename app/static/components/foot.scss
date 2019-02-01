@@ -1,0 +1,34 @@
+.index_footer {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+.index_footer a {
+    display: block;
+    width: 25%;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #999;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.index_footer .iconfont {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.index_footer a span {
+    display: block;
+}
+.index_footer .footer_select {
+    color: red;
+}
