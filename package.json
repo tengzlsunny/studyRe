@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --devtool eval --progress --colors --content-base",
-    "build": "webpack --progress --hide-modules --mode production"
+    "build": "webpack --progress --hide-modules --mode production",
+    "app": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,12 @@
   "bugs": {
     "url": "https://github.com/tengzlsunny/studyRe/issues"
   },
+  "keywords": [
+    "网易云音乐",
+    "网易云",
+    "音乐",
+    "网易云音乐nodejs"
+  ],
   "homepage": "https://github.com/tengzlsunny/studyRe#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -36,10 +43,18 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "apicache": "^1.2.3",
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "intelli-espower-loader": "^1.0.1",
     "lib-flexible": "^0.3.2",
+    "mocha": "^5.2.0",
+    "pac-proxy-agent": "^3.0.0",
+    "power-assert": "^1.6.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-config": "^4.4.0-beta.6",
+    "request": "^2.88.0",
     "webpack-cli": "^3.2.1"
   }
 }

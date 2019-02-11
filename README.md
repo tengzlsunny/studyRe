@@ -246,6 +246,49 @@
 
            传值到footer.js
 
+        6. 引入https://github.com/Binaryify/NeteaseCloudMusicApi，网易云接口
+            运行npm run app
+        
+        7. 设置接口端口号： 
+            ```js
+            export default {
+                apiUrl : 'http://localhost:3000/'
+            }
+            ```
+
+        8. react数据请求
+
+           * React本身不包含发送Ajax的代码，一般使用第三方的库。如axios，这是专门用于ajax请求的库。其封装了XmlHttpRequest对象的ajax,且使用promise风格写法，在浏览器的客户端与服务端都能使用。
+
+           * 你可能会想问为什么不用fetch()原生函数呢？因为考虑到对老版本浏览器的支持情况。 其次，fetch（）不使用XmlHttpRequest对象发生ajax请求。
+
+            > fetch 请求
+             导入：npm install whatwg-fetch 
+             引入： import 'whatwg-fetch' 
+   
+            ```js
+                // get请求
+                fetch('url')
+                .then(res=>res.json())
+                .then(json=>this.setState({list: json}))
+
+                // post 请求
+                fetch('url',{
+                    method:'post',//改成post
+                    mode: 'cors',//跨域
+                    headers: {//请求头
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body:"..."//向服务器发送的数据
+                })
+                .then(res=>res.json())
+                .then(json=>{console.log(json)})
+            ```
+
+            > axios 依赖注入axios npm install --save axios
+                api.js中加入axios，以对象的形式输出
+
+        9. 
            
 
 ### 引入一些插件
