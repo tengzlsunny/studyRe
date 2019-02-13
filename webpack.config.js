@@ -32,12 +32,19 @@ module.exports = {
                 test: /\.(css|scss)$/,
                 exclude: /node_modules/,
                 use: ['style-loader', 'css-loader', 'sass-loader',
-                {
-                    loader: 'px2rem-loader',
-                    options: {
-                        remUni: 75
+                    {
+                        loader: 'px2rem-loader',
+                        options: {
+                            remUni: 75
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [require("autoprefixer")("last 100 versions")]
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.(woff|svg|eot|ttf)|\.(gif|jpg|png)$/,

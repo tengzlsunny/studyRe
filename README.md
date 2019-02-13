@@ -98,19 +98,30 @@
         > 配置px2rem-loader
         > 配置sass
         > webpack.config.js的rules中加入
-            ```js
+           
+    * 安装postcss和autoprefixer(给css3样式添加浏览器兼容)
+        > npm install --save-dev postcss-loader autoprefixer postcss
+         ```js
             {
                 test: /\.(css|scss)$/,
                 exclude: /node_modules/,
                 use: ['style-loader', 'css-loader', 'sass-loader',
-                {
-                    loader: 'px2rem-loader',
-                    options: {
-                        remUni: 75
+                    {
+                        loader: 'px2rem-loader',
+                        options: {
+                            remUni: 75
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [require("autoprefixer")("last 100 versions")]
+                        }
                     }
-                }]
+                ]
             }
-            ```
+        ```
+
 2. 了解react语法
 
     React Component 撰写的主要两种方式
