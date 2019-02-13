@@ -41,14 +41,8 @@ module.exports = {
             },
             {
                 test: /\.(woff|svg|eot|ttf)|\.(gif|jpg|png)$/,
-                use: ["url-loader?limit=8000"]
-            },
-            // {
-            //     // test: /\.(gif|jpg|png)$/ || /\.(woff|svg|eot|ttf)/,
-            //     test: /\.(gif|jpg|png)$/,
-            //     // use: "url-loader?limit=8000"
-            //     use: ["file-loader"]
-            // }
+                use: ["url-loader?limit=8192&name=images/[hash:8].[name].[ext]"]
+            }
         ],
     },
     // devServer 则是 webpack-dev-server 设定
@@ -58,4 +52,10 @@ module.exports = {
     },
     // plugins 放置所使用的外挂
     plugins: [HTMLWebpackPluginConfig],
+    resolve: {
+        // 设置路径
+        alias: {
+            '@': require('path').resolve(__dirname, './app')
+        }
+    }
 };

@@ -1,0 +1,19 @@
+.banner_div {
+    position: relative;
+}
+.banner_ul {
+    width: 750px;
+    transition: all 0.5s ease-in-out;
+}
+.banner_ul li {
+    position: absolute;
+    top: 0;
+}
+.banner_ul li a {
+    display: block;
+    width: 750px;
+}
+.banner_ul li a img {
+    display: block;
+    width: 750px;
+}
