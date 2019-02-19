@@ -5,23 +5,29 @@
 }
 .banner_ul {
     height: 323px;
+    box-sizing: border-box;
+    list-style: none;
 }
 .banner_ul li {
     position: absolute;
     top: 0;
+    width: 750px;
 }
 .banner_ul li a {
     display: block;
-    width: 750px;
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 .banner_ul li a img {
     display: block;
-    width: 750px;
+    width: 100%;
+    border-radius: 20px;
 }
 
 .banner_pot {
     width: fit-content;
-    margin: -36px auto 0;
+    margin: -60px auto 20px;
     position: relative;
 }
 .banner_pot li {

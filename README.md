@@ -360,6 +360,19 @@
             ```
 
         11. react轮播
+            > 手写轮播，详见components/slider.js
+            > 在home.js中引入组件
+
+        12. 推荐
+            > 写了一个json数据，详见static/json/tj.json
+            > 在home.js中发送请求
+            ```js
+                api.axios.get('./app/static/json/tj.json')
+                .then(res => {
+                    console.log(res.data)
+                })
+            ```
+
 
              
 
@@ -395,6 +408,16 @@
 
 
 ### 遇到的问题
+
+> Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method
+###### 用了定时器，然而在定时的这段时间，组件已经销毁，则造成此类问题，因此在组件销毁前需要清除定时器
+        ```js
+            componentWillUnmount(){
+                window.clearInterval(this.state.timer)
+            }
+        ```
+    
+
 
 
 ​        

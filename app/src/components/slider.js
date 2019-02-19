@@ -1,14 +1,7 @@
 import React from 'react'
 import '@/static/components/slider.scss';
 
-import banner1 from '@/assets/imgs/1.jpg'
-import banner2 from '@/assets/imgs/2.jpg'
-import banner3 from '@/assets/imgs/3.jpg'
-import banner4 from '@/assets/imgs/4.jpg'
-import banner5 from '@/assets/imgs/5.jpg'
-import banner6 from '@/assets/imgs/6.jpg'
-import banner7 from '@/assets/imgs/7.jpg'
-import banner8 from '@/assets/imgs/8.jpg'
+
 
 import '../../static/components/foot.scss';
 
@@ -16,40 +9,6 @@ export default class Slider extends React.Component {
     constructor() {
         super()
         this.state = {
-            banner: [
-                {
-                    imgUrl: banner1,
-                    addUrl: 'https://www.baidu.com'
-                },
-                {
-                    imgUrl: banner2,
-                    addUrl: 'https://www.baidu.com'
-                },
-                {
-                    imgUrl: banner3,
-                    addUrl: 'https://www.baidu.com'
-                },
-                {
-                    imgUrl: banner4,
-                    addUrl: 'https://www.baidu.com'
-                },
-                {
-                    imgUrl: banner5,
-                    addUrl: 'https://www.baidu.com'
-                },
-                {
-                    imgUrl: banner6,
-                    addUrl: 'https://www.baidu.com'
-                },
-                {
-                    imgUrl: banner7,
-                    addUrl: 'https://www.baidu.com'
-                },
-                {
-                    imgUrl: banner8,
-                    addUrl: 'https://www.baidu.com'
-                }
-            ],
             ulWidth: null,
             carousel_style: {
                 transition: 'all 0.5s ease-in-out',
@@ -65,7 +24,7 @@ export default class Slider extends React.Component {
     componentDidMount() {
         let options = this.props.options
         this.setState({
-            ulWidth: document.querySelector('.banner_ul').clientWidth
+            ulWidth: document.querySelector('body').clientWidth
         })
         window.addEventListener('resize', this.handleResize.bind(this))
 
@@ -78,11 +37,13 @@ export default class Slider extends React.Component {
         })
     }
 
-
+    componentWillUnmount(){
+        window.clearInterval(this.state.timer)
+    }
 
     render() {
         let that = this
-        let arr = that.state.banner
+        let arr = that.props.options.banner
         return (
             <div className="banner_div">
                 <ul className="banner_ul" style={that.state.carousel_style} onTouchStart={this.touchstart.bind(this)}  onTouchEnd={this.touchend.bind(this)} onTouchMove={this.touchmove.bind(this)}>
@@ -234,7 +195,7 @@ export default class Slider extends React.Component {
                     transform: 'translateX(' + ulWidth + 'px)'
                 },
             })
-            preIndex = that.state.banner.length - 1
+            preIndex = that.props.options.banner.length - 1
             setTimeout(() => {
                 that.setState({
                     carousel_style: {
@@ -262,7 +223,7 @@ export default class Slider extends React.Component {
         let ulWidth = that.state.ulWidth
         let preIndex = that.state.perIndex + 1
 
-        if (preIndex == that.state.banner.length) {
+        if (preIndex == that.props.options.banner.length) {
             that.setState({
                 carousel_style: {
                     transition: 'all 0.5s ease-in-out',

@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "icon": "icon-diantaizhibo",
+            "content": "私人FM",
+            "route": "/product"
+        },
+        {
+            "icon": "icon-riliriqi",
+            "content": "每日推荐",
+            "route": "/product"
+        },
+        {
+            "icon": "icon-gedan",
+            "content": "歌单",
+            "route": "/product"
+        },
+        {
+            "icon": "icon-paixingbang",
+            "content": "排行榜",
+            "route": "/product"
+        }
+    ]
+}
