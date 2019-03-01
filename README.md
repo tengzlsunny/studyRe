@@ -382,20 +382,18 @@
     * 下载阿里字体库至本地
     * 引入的文件部分需要解析：npm install --save-dev url-loader
     * 配置项
-    *
-    * ```js
-    * 
-    * {
-    *    {
+
+     ```js
+    
+     {
+        {
             test: /\.(woff|svg|eot|ttf)|\.(gif|jpg|png)$/,
             use: ["url-loader?limit=8192&name=images/[hash:8].[name].[ext]"] // 在url-loader四版本及以上必须是数组的形式
         } 
-    * },
-    * 
-    * ```
-    *
-    * 
-    *
+     },
+     
+     ```
+    
 
 ### 随便
 * js写标签快捷

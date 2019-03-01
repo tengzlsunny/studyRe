@@ -36,11 +36,11 @@ export default class NavigationBar extends React.Component {
         //     })
         // })
         api.axios.get('./app/static/json/tj.json')
-            .then(res => {
-                that.setState({
-                    recommend: res.data.data
-                })
+        .then(res => {
+            that.setState({
+                recommend: res.data.data
             })
+        })
     }
 
     render() {
@@ -77,6 +77,8 @@ export default class NavigationBar extends React.Component {
                 <ul className="tj">
                     {tjList}
                 </ul>
+
+                <Typelist type="1"/>
 
                 <Footer text="0" />
 
@@ -156,3 +158,19 @@ class Home0 extends React.Component{
     }
 }
 
+// 类型列表
+class Typelist extends React.Component{
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <div>
+                <div>
+                   11111
+                </div>
+            </div>
+        )
+    }
+}

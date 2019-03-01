@@ -4,12 +4,15 @@
     width: 100%;
     left: 0;
     bottom: 0;
+    padding: 0 30px 0 16px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .index_footer a {
     display: block;
-    width: 25%;
+    flex: 1;
     height: 80px;
     text-align: center;
     text-decoration: none;
@@ -17,18 +20,27 @@
     color: #999;
     font-size: 24px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     padding-top: 10px;
+}
+.index_footer a img {
+    width: 60px;
+    height: 70px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.index_footer a div {
+    text-align: left;
 }
 
 .index_footer .iconfont {
-    font-size: 30px;
-    margin-bottom: 6px;
+    font-size: 36px;
+    color: #aaa;
 }
-
-.index_footer a span {
-    display: block;
+.index_footer .icon_sc {
+    margin-left: 10px;
 }
-.index_footer .footer_select {
+.index_footer .sc_icon {
     color: red;
 }
+
