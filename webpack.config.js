@@ -55,7 +55,8 @@ module.exports = {
     // devServer 则是 webpack-dev-server 设定
     devServer: {
         inline: true,
-        port: 8088
+        port: 8088,
+        open: true
     },
     // plugins 放置所使用的外挂
     plugins: [HTMLWebpackPluginConfig],

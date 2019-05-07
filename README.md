@@ -50,6 +50,7 @@
         devServer: {
             inline: true,
             port: 8088,
+            open: true // 项目运行，自动打开页面，默认是false
         },
         // plugins 放置所使用的外挂
         plugins: [HTMLWebpackPluginConfig],
