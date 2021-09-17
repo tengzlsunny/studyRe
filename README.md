@@ -80,7 +80,7 @@
     }
     ```
 9. 运行命令 
-    * npm run dev
+    * npm run dev / yarn dev
     * 在地址栏输入：localhost:8088
 
 *** *以上简单的react完成*
@@ -133,24 +133,24 @@
             // render 是 Class based 组件唯一必须的方法（method）
             render() {
                 return (
-                    <div*Hello, World!</div*
+                    <div>Hello, World!</div>
                 );
             }
         }
 
-        // 将 <MyComponent /* 组件插入 id 为 app 的 DOM 元素中
-        ReactDOM.render(<MyComponent/*, document.getElementById('app'));
+        // 将 <MyComponent /> 组件插入 id 为 app 的 DOM 元素中
+        ReactDOM.render(<MyComponent />, document.getElementById('app'));
         ```
         
     2.  ```js
         // 单纯地 render UI 的 stateless components，没有内部状态、没有实作物件和 ref，没有生命周期函数。若非需要控制生命周期的话建议多使用 stateless components 获得比较好的效能
         // 使用 arrow function 来设计 Functional Component 让 UI 设计更单纯（f(D) =* UI），减少副作用（side effect）
-        const MyComponent = () =* (
-            <div*Hello, World!</div*
+        const MyComponent = () => (
+            <div>Hello, World!</div>
         );
 
-        // 将 <MyComponent /* 组件插入 id 为 app 的 DOM 元素中
-        ReactDOM.render(<MyComponent/*, document.getElementById('app'));
+        // 将 <MyComponent /> 组件插入 id 为 app 的 DOM 元素中
+        ReactDOM.render(<MyComponent />, document.getElementById('app'));
         ```
 
     * Component PropType 防呆机制
@@ -176,7 +176,7 @@
                 backgroundImage: 'url(' + imgUrl + ')',
             };
         
-            <div style={divStyle}*Hello World!</div*
+            <div style={divStyle}>Hello World!</div>
         ```
     4. react路由
         * 安装react路由项：npm install --save-dev react-router
@@ -237,13 +237,13 @@
                     export default class Index extends React.Component{
                         render() {
                             return (
-                                <div*
-                                    <HashRouter*
-                                        <div*
+                                <div>
+                                    <HashRouter>
+                                        <div>
                                             {renderRoutes(routes)}
-                                        </div*
-                                    </HashRouter*
-                                </div*
+                                        </div>
+                                    </HashRouter>
+                                </div>
                                 
                             )
                         }
@@ -542,25 +542,4 @@
                 window.clearInterval(this.state.timer)
             }
         ```
-    
-
-
-
-​        
-​            
-
-
-​            
-
-
-
-
-
-
-
-
-
-​    
-
-
-
+  
